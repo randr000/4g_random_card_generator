@@ -1,1 +1,31 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+
+body {
+  background-color: green;
+}
+
+.upside-down {
+  transform: rotate(180deg);
+}
+
+.card {
+  border-radius: 15px;
+}
+
+.unicode {
+  font-size: 10rem;
+}
+
+.card-number {
+  font-size: 11rem;
+}
+
+.heart,
+.diamond {
+  color: red;
+}
+
+.spade,
+.club {
+  color: black;
+}
