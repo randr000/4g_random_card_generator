@@ -4,7 +4,6 @@ import "./style.css";
 
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
-import { getSupportInfo } from "prettier";
 
 // Generates a random whole number between 0 and the number passed through inclusive
 function genRandomNum(maxNum) {
