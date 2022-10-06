@@ -14,15 +14,32 @@
   </head>
   <body>
     <div class="container-fluid">
-      <div class=" d-flex justify-content-center mt-5">
-        <div class="card w-25">
-          <div class="card-title ms-3 unicode">♥</div>
-          <div class="card-body d-flex justify-content-center card-number">
+      <div
+        class=" d-flex flex-column justify-content-center align-items-center mt-5"
+      >
+        <button
+          id="genCardBtn"
+          type="button"
+          class="btn btn-danger mb-5 border"
+          title="Click to generate new random card"
+        >
+          Generate New Card
+        </button>
+        <div
+          id="card"
+          class="card w-25"
+          title="Click on card to generate new random card"
+        >
+          <div class="card-title ms-3 unicode disable-select suit"></div>
+          <div
+            id="card-value"
+            class="card-body d-flex justify-content-center card-number disable-select "
+          >
             5
           </div>
           <div class="card-title d-flex justify-content-end">
             <span class="me-3 unicode">
-              <div class="upside-down heart">♥</div>
+              <div class="upside-down disable-select suit"></div>
             </span>
           </div>
         </div>

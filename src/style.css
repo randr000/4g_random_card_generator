@@ -9,7 +9,7 @@ body {
 }
 
 .card {
-  border-radius: 15px;
+  border-radius: 35px;
 }
 
 .unicode {
@@ -28,4 +28,8 @@ body {
 .spade,
 .club {
   color: black;
+}
+
+.disable-select {
+  user-select: none;
 }

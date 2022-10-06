@@ -12,7 +12,12 @@ function genRandomNum(maxNum) {
 
 // Generate the suit of the card randomly
 function genSuit() {
-  const suits = ["♦", "♥", "♠", "♣"];
+  const suits = [
+    { name: "diamond", value: "♦" },
+    { name: "heart", value: "♥" },
+    { name: "spade", value: "♠" },
+    { name: "club", value: "♣" }
+  ];
   return suits[genRandomNum(suits.length)];
 }
 
@@ -22,18 +27,48 @@ function genCardValue() {
   return cards[genRandomNum(cards.length)];
 }
 
-// Generate random card
+// Generate random card values and suit
 function genCard() {
+  let suit = genSuit();
   return {
-    suit: genSuit(),
+    suitName: suit.name,
+    suitValue: suit.value,
     value: genCardValue()
   };
 }
 
 window.onload = function() {
   //write your code here
-  let card = genCard();
+  const cardElement = document.getElementById("card");
+  const cardValue = document.getElementById("card-value");
+  const suits = document.querySelectorAll(".suit");
+  const genCardBtn = document.getElementById("genCardBtn");
+  const genCardClickElements = [cardElement, genCardBtn];
 
-  console.log(card.suit);
-  console.log(card.value);
+  // Removes old suit classes
+  function removeSuitClasses(element) {
+    const suitClass = ["diamond", "heart", "spade", "club"];
+    for (let cls of suitClass) {
+      element.classList.remove(cls);
+    }
+  }
+
+  // Sets the values and the suit in the DOM
+  function setCardData() {
+    let card = genCard();
+    cardValue.innerText = card.value;
+
+    for (let suit of suits) {
+      suit.innerText = card.suitValue;
+      removeSuitClasses(suit);
+      suit.classList.add(card.suitName);
+    }
+  }
+
+  setCardData();
+
+  // Lets user click on elements to generate a new random card
+  for (let element of genCardClickElements) {
+    element.addEventListener("click", setCardData);
+  }
 };
