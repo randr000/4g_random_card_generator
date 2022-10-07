@@ -16,8 +16,12 @@ body {
   font-size: 10rem;
 }
 
-.card-number {
+.number-font-size {
   font-size: 11rem;
+}
+
+#countdown-text {
+  font-size: 4rem;
 }
 
 .heart,
