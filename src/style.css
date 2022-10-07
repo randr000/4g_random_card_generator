@@ -8,6 +8,10 @@ body {
   transform: rotate(180deg);
 }
 
+button {
+  font-size: 3rem !important;
+}
+
 .card {
   border-radius: 35px;
 }
