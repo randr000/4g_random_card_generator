@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello Rigo with Vanilla.js</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+      crossorigin="anonymous"
+    />
+    <link rel="shortcut icon" href="./4geeks.ico" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 d-flex justify-content-center my-5">
+          <button
+            id="genCardBtn"
+            type="button"
+            class="btn btn-danger mb-5 py-3 px-5 border border-5"
+            title="Click to generate new random card"
+          >
+            Generate New Card
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 d-flex justify-content-evenly">
+          <div id="countdown" class="w-25">
+            <p id="countdown-text" class="text-center text-wrap fw-bold">
+              New card will generate in...
+            </p>
+            <p id="countdown-num" class="number-font-size text-center">10</p>
+          </div>
+          <div
+            id="card"
+            class="card w-25"
+            title="Click on card to generate new random card"
+          >
+            <!--The suit at the upper left of the card-->
+            <div class="card-title unicode disable-select suit"></div>
+            <!--The card value-->
+            <div
+              id="card-value"
+              class="card-body d-flex justify-content-center number-font-size disable-select "
+            ></div>
+            <div class="card-title d-flex justify-content-end">
+              <span class=" unicode">
+                <!--The suit at the bottom right of the card-->
+                <div class="upside-down disable-select suit"></div>
+              </span>
+            </div>
+          </div>
+          <div
+            class="w-25 d-flex flex-column align-items-center justify-content-start"
+          >
+            <label
+              for="card-width"
+              class="form-label card-form-label text-wrap text-center fw-bold"
+              >Adjust Card Width</label
+            >
+            <input
+              type="range"
+              class="form-range mb-5 btn btn-light"
+              id="card-width"
+              min="141"
+              max="2000"
+            />
+            <label
+              for="card-height"
+              class="form-label card-form-label text-wrap text-center mb-4 fw-bold"
+              >Adjust Card Height</label
+            >
+            <input
+              type="range"
+              class="form-range btn btn-light"
+              id="card-height"
+              step="1"
+              min="720"
+              max="2000"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  <script src="main.bundle.js"></script></body>
+</html>
