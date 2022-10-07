@@ -45,6 +45,12 @@ window.onload = function() {
   const genCardBtn = document.getElementById("genCardBtn");
   const genCardClickElements = [cardElement, genCardBtn];
   const countdownNum = document.getElementById("countdown-num");
+  const cardWidthSlider = document.getElementById("card-width");
+  const cardHeightSlider = document.getElementById("card-height");
+
+  // Sets range values to cards initial height and width
+  cardWidthSlider.value = cardElement.offsetWidth;
+  cardHeightSlider.value = cardElement.offsetHeight;
 
   // Removes old suit classes
   function removeSuitClasses(element) {
@@ -66,6 +72,15 @@ window.onload = function() {
     }
 
     countdownNum.textContent = "10";
+    // console.log(
+    //   `Width: ${typeof cardElement.offsetWidth} Height: ${
+    //     cardElement.offsetHeight
+    //   }`
+    // );
+
+    console.log(
+      `Width: ${cardWidthSlider.value} Height: ${cardHeightSlider.value}`
+    );
   }
 
   setCardData();
@@ -84,4 +99,14 @@ window.onload = function() {
   for (let element of genCardClickElements) {
     element.addEventListener("click", setCardData);
   }
+
+  // Add event listener to slider to adjust card width
+  cardWidthSlider.addEventListener("change", e => {
+    cardElement.setAttribute("style", `width: ${e.target.value}px !important`);
+  });
+
+  // Add event listener to slider to adjust card height
+  cardHeightSlider.addEventListener("change", e => {
+    cardElement.setAttribute("style", `height: ${e.target.value}px !important`);
+  });
 };
