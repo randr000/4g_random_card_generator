@@ -44,6 +44,7 @@ window.onload = function() {
   const suits = document.querySelectorAll(".suit");
   const genCardBtn = document.getElementById("genCardBtn");
   const genCardClickElements = [cardElement, genCardBtn];
+  const countdownNum = document.getElementById("countdown-num");
 
   // Removes old suit classes
   function removeSuitClasses(element) {
@@ -63,9 +64,21 @@ window.onload = function() {
       removeSuitClasses(suit);
       suit.classList.add(card.suitName);
     }
+
+    countdownNum.textContent = "10";
   }
 
   setCardData();
+
+  // Countdown timer
+  setInterval(() => {
+    if (countdownNum.textContent === "1") {
+      countdownNum.textContent = "10";
+      setCardData();
+    } else {
+      countdownNum.textContent = parseInt(countdownNum.textContent) - 1;
+    }
+  }, 1000);
 
   // Lets user click on elements to generate a new random card
   for (let element of genCardClickElements) {
